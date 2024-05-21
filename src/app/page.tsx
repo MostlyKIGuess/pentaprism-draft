@@ -7,12 +7,8 @@ import { Philosophy } from "./components/maskphilosophy";
 import { Misccard } from "./components/misccard";
 
 export default function Home() {
-  return(
-    <main style={{
-      backgroundImage: "url('/assests/background-image/waves.jpg)",
-      backgroundSize: "cover",
-      backgroundRepeat : "no-repeat",
-    }}>
+  return (
+    <main>
       {/* <LampDemo /> */}
 
       <Intro />
