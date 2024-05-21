@@ -5,6 +5,7 @@ import { Intro } from "./components/intro";
 import { EventsPage } from "./components/events";
 import { Philosophy } from "./components/maskphilosophy";
 import { Misccard } from "./components/misccard";
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Philosophy />
       <Misccard />
       <BG />
+      <Analytics/>
     </main>
   );
 }

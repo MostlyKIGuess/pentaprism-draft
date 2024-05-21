@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-three/fiber": "^8.16.6",
+    "@vercel/analytics": "^1.2.2",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.4",
     "mini-svg-data-uri": "^1.4.4",
