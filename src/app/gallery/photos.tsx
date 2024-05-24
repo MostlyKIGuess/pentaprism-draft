@@ -1,93 +1,183 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { LayoutGrid } from "../components/ui/layout-grid";
+import InfoSkeleton from "./infoskeleton";
+import { useDropzone } from 'react-dropzone';
+import Link from 'next/link';
 
 export function Photoslayout() {
+  const perPage = 4;
+  const [page, setPage] = useState(4);
+  const [cards, setCards] = useState(initialCards);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [showUpload, setShowUpload] = useState(false);
+
+
+  const handleNextPage = () => {
+    const nextPage = page + 1;
+    const nextCards = initialCards.slice((nextPage - 1) * perPage, nextPage * perPage);
+    setCards(cards.concat(nextCards)); 
+    setPage(nextPage);
+  }
+  // const onDrop = (acceptedFiles) => {
+  //   acceptedFiles.forEach((file) => {
+  //     const reader = new FileReader();
+
+  //     reader.onload = () => {
+  //       const binaryStr = reader.result;
+  //       setCards(prevCards => [
+  //         ...prevCards,
+  //         {
+  //           id: prevCards.length + 1,
+  //           content: <InfoSkeleton username={username} />,
+  //           className: "md:col-span-2",
+  //           thumbnail: binaryStr,
+  //         },
+  //       ]);
+  //     };
+  //     reader.readAsDataURL(file);
+  //   });
+  // };
+
+  // const { getRootProps, getInputProps } = useDropzone({ onDrop });
+
+  const handleUploadClick = () => {
+    if (password === 'your_password') {
+      setShowUpload(true);
+    } else {
+      alert('Incorrect password');
+    }
+  }
+  const cards1 = cards.slice(0, 5);
+  const cards2 = cards.slice(5, cards.length);
+ 
+
+
   return (
-    <div className="h-screen py-20 w-full">
-      <LayoutGrid cards={cards} />
+    // <div className="max-h-screen py-5 w-full flex flex-col items-center justify-center">
+    //   {/* <button onClick={handleUploadClick} className="px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative">
+    //     <span>Add Your Own Image</span>
+    //     <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
+    //   </button>
+    //   {showUpload && (
+    //     <div className="flex flex-col items-center justify-center">
+    //       <div {...getRootProps()}>
+    //         <input {...getInputProps()} />
+    //         <p >Drag 'n' drop some files here, or click to select files</p>
+    //       </div>
+    //       <input
+    //         type="text"
+    //         value={username}
+    //         onChange={e => setUsername(e.target.value)}
+    //         placeholder="Enter your username"
+    //       />
+    //     </div>
+    //   )}
+    //   <input
+    //     type="password"
+    //     value={password}
+    //     onChange={e => setPassword(e.target.value)}
+    //     placeholder="Enter password to upload"
+    //   /> */}
+    // <div className="h-screen   py-5 w-full flex flex-col items-center justify-center">
+      
+    // <LayoutGrid cards={cards1} />
+
+    // </div>
+    // <div className="h-screen py-5 w-full flex flex-col items-center justify-center">
+    // <LayoutGrid cards={cards2} />
+    // </div>
+    // <div className="h-screen py-5 w-full flex flex-col items-center justify-center">
+
+        
+    //   <LayoutGrid cards={cards3} />
+    //   {/* <button onClick={handleNextPage}>Load More</button>  */}
+    // </div>
+    // </div>
+    <div className="w-full flex flex-col">
+    <div className="h-screen py-5 flex flex-col items-center justify-center">
+      <LayoutGrid cards={cards1} />
     </div>
+    <div className="h-screen py-5 flex flex-col items-center justify-center">
+      <LayoutGrid cards={cards2} />
+    </div>
+    {/* <div className="h-screen py-5 flex flex-col items-center justify-center">
+      <LayoutGrid cards={cards3} />
+    </div> */}
+  </div>
+ 
+  
   );
 }
 
-const SkeletonOne = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">House in the woods</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A serene and tranquil retreat, this house in the woods offers a peaceful
-        escape from the hustle and bustle of city life.
-      </p>
-    </div>
-  );
-};
 
-const SkeletonTwo = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">House above the clouds</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Perched high above the world, this house offers breathtaking views and a
-        unique living experience. It&apos;s a place where the sky meets home,
-        and tranquility is a way of life.
-      </p>
-    </div>
-  );
-};
-const SkeletonThree = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">Greens all over</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house surrounded by greenery and nature&apos;s beauty. It&apos;s the
-        perfect place to relax, unwind, and enjoy life.
-      </p>
-    </div>
-  );
-};
-const SkeletonFour = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">Rivers are serene</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house by the river is a place of peace and tranquility. It&apos;s the
-        perfect place to relax, unwind, and enjoy life.
-      </p>
-    </div>
-  );
-};
+const initialCards = [
 
-const cards = [
   {
     id: 1,
-    content: <SkeletonThree />,
-    className: "md:col-span-2",
-    thumbnail:
-      "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    content: <InfoSkeleton username="Akshit" />,
+    className: "md:col-span-2", 
+    thumbnail: "/photos/akshit.jpeg",
   },
   {
     id: 2,
-    content: <SkeletonTwo />,
-    className: "col-span-1",
-    thumbnail:
-      "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    content: <InfoSkeleton username="Arya Topale" />,
+    className:  "col-span-1",
+    thumbnail: "/photos/Arya Topale.jpeg",
   },
   {
     id: 3,
-    content: <SkeletonOne />,
-    className: "col-span-1",
-    thumbnail:
-      "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    content: <InfoSkeleton username="Bhavya" />,
+    className:  "col-span-1",
+    thumbnail: "/photos/bhavya.jpeg",
   },
   {
     id: 4,
-    content: <SkeletonFour />,
+    content: <InfoSkeleton username="Brahad" />,
+    className:"md:col-span-2",
+    thumbnail: "/photos/Brahad.jpeg",
+  },
+  {
+    id: 5,
+    content: <InfoSkeleton username="Kiran" />,
     className: "md:col-span-2",
-    thumbnail:
-      "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    thumbnail: "/photos/kiran.jpeg",
+  },
+  {
+    id: 6,
+    content: <InfoSkeleton username="Nidhi" />,
+    className: "md:col-span-2",
+    thumbnail: "/photos/nidhi.jpeg",
+  },
+  {
+    id: 7,
+    content: <InfoSkeleton username="Raunak Seksaria" />,
+    className:  "col-span-1",
+    thumbnail: "/photos/raunak seksaria.jpeg",
+  },
+  {
+    id: 8,
+    content: <InfoSkeleton username="Roshan" />,
+    className:  "col-span-1",
+    thumbnail: "/photos/roshan.jpeg",
+  },
+  {
+    id: 9,
+    content: <InfoSkeleton username="Shravani" />,
+    className:  "md:col-span-2",
+    thumbnail: "/photos/shravani.jpeg",
+  },
+  {
+    id: 10,
+    content: <InfoSkeleton username="Soumil" />,
+    className: "col-span-1",
+    thumbnail: "/photos/soumil.jpeg",
+  },
+  {
+    id: 11,
+    content: <InfoSkeleton username="Yajat" />,
+    className:  "col-span-1",
+    thumbnail: "/photos/yajat.jpeg",
   },
 ];

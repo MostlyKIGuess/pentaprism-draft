@@ -16,8 +16,12 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   const [lastSelected, setLastSelected] = useState<Card | null>(null);
 
   const handleClick = (card: Card) => {
-    setLastSelected(selected);
-    setSelected(card);
+    if (selected?.id === card.id) {
+      handleOutsideClick();
+    } else {
+      setLastSelected(selected);
+      setSelected(card);
+    }
   };
 
   const handleOutsideClick = () => {
@@ -27,7 +31,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 
   return (
       
-    <div className="w-full h-full p-1 grid grid-cols-1 md:grid-cols-3  max-w-6xl mx-auto gap-4 relative">
+    <div className="w-full h-full p-1 grid grid-cols-1 md:grid-cols-4 max-w-6xl mx-auto gap-4 relative overflow-auto">
     {cards.map((card, i) => (
       <div key={i} className={cn(card.className, "")}>
         <motion.div
@@ -103,10 +107,14 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
           ease: "easeInOut",
         }}
         className="relative px-8 pb-4 z-[70]"
-      > {selected?.content}
-       
+      >
+        {selected?.content}
+        {selected && (
+        <a href={selected.thumbnail} download className="mt-5 backdrop-filter backdrop-blur bg-transparent font-bold text-sky-500 hover:text-blue-700">
+          Download Image
+        </a>
+      )}
       </motion.div>
-      
     </div>
   );
 };
