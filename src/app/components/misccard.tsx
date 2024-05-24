@@ -35,9 +35,14 @@ const testimonials = [
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+      "Photographs are powerful, because only they can stop time.",
+    name: "yajat",
+    title: "Well well we are short in time",
   },
-
+{
+    quote:
+      "I am a camera with its shutter open, quite passive, recording, not thinking.",
+    name: "Christopher Isherwood",
+    title: "Goodbye to Berlin",
+}
 ];

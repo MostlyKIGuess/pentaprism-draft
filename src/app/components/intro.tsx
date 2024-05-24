@@ -39,6 +39,10 @@ export function Intro() {
         <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
       </button>
     </Link>
+
+    <motion.p className=" text-xl md:text-4xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
+    The Photography Club of IIIT Hyderabad
+        </motion.p>
       </motion.div>
     </ImagesSlider>
     </div>
