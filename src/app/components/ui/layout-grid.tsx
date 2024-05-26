@@ -28,10 +28,8 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
     setLastSelected(selected);
     setSelected(null);
   };
-
   return (
-      
-    <div className="w-full h-full p-1 grid grid-cols-3 md:grid-cols-4  max-w-6xl mx-auto gap-4 relative overflow-auto">
+    <div className="w-full h-full grid grid-cols-3  md:grid-rows-3 max-w-6xl mx-auto gap-4 relative overflow-auto">
     {cards.map((card, i) => (
       <div key={i} className={cn(card.className, "")}>
         <motion.div

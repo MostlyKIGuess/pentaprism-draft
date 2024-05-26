@@ -31,7 +31,7 @@ export function Photoslayout() {
   //         {
   //           id: prevCards.length + 1,
   //           content: <InfoSkeleton username={username} />,
-  //           className: "md:col-span-2",
+  //           className: "col-auto",
   //           thumbnail: binaryStr,
   //         },
   //       ]);
@@ -49,8 +49,8 @@ export function Photoslayout() {
       alert('Incorrect password');
     }
   }
-  const cards1 = cards.slice(0, 5);
-  const cards2 = cards.slice(5, cards.length);
+  const numberOfGrids = Math.ceil(cards.length / 9);
+  
  
 
 
@@ -80,33 +80,19 @@ export function Photoslayout() {
     //     onChange={e => setPassword(e.target.value)}
     //     placeholder="Enter password to upload"
     //   /> */}
-    // <div className="h-screen   py-5 w-full flex flex-col items-center justify-center">
-      
-    // <LayoutGrid cards={cards1} />
-
-    // </div>
-    // <div className="h-screen py-5 w-full flex flex-col items-center justify-center">
-    // <LayoutGrid cards={cards2} />
-    // </div>
-    // <div className="h-screen py-5 w-full flex flex-col items-center justify-center">
-
-        
-    //   <LayoutGrid cards={cards3} />
-    //   {/* <button onClick={handleNextPage}>Load More</button>  */}
-    // </div>
-    // </div>
-    <div className="w-full flex flex-col">
-    {/* <div className="h-screen py-5 flex flex-col items-center justify-center">
-      <LayoutGrid cards={cards1} />
-    </div>
-    <div className="h-screen py-5 flex flex-col items-center justify-center">
-      <LayoutGrid cards={cards2} />
-    </div> */}
-    <div className="h-screen py-5 flex md:flex-col sm:flex-row items-center justify-center">
-    <LayoutGrid cards={initialCards} />
-    </div>
-    
+   
+    <div className="w-full flex flex-col p-6">
+    {Array.from({ length: numberOfGrids }, (_, index) => {
+      const cardsForThisGrid = cards.slice(index * 9, (index + 1) * 9);
+      return (
+        <div key={index} className="h-screen p-2 flex md:flex-col sm:flex-row items-center justify-center">
+          <LayoutGrid cards={cardsForThisGrid} />
+        </div>
+      );
+    })}
   </div>
+    
+  // </div> 
  
   
   );
@@ -118,69 +104,69 @@ const initialCards = [
   {
     id: 1,
     content: <InfoSkeleton username="Akshit" />,
-    className: "md:col-span-2", 
+    className: "col-auto", 
     thumbnail: "/photos/akshit.jpeg",
   },
   {
     id: 2,
     content: <InfoSkeleton username="Arya Topale" />,
-    className:  "col-span-1",
+    className:  "col-auto",
     thumbnail: "/photos/Arya Topale.jpeg",
   },
   {
     id: 3,
     content: <InfoSkeleton username="Bhavya" />,
-    className:  "col-span-1",
+    className:  "col-auto",
     thumbnail: "/photos/bhavya.jpeg",
   },
   {
     id: 4,
     content: <InfoSkeleton username="Brahad" />,
-    className:"md:col-span-2",
+    className:"col-auto",
     thumbnail: "/photos/Brahad.jpeg",
   },
 
   {
     id: 6,
     content: <InfoSkeleton username="Nidhi" />,
-    className: "md:col-span-2",
+    className: "col-auto",
     thumbnail: "/photos/nidhi.jpeg",
   },
   {
     id: 7,
     content: <InfoSkeleton username="Raunak Seksaria" />,
-    className:  "col-span-1",
+    className:  "col-auto",
     thumbnail: "/photos/raunak seksaria.jpeg",
   },
   {
     id: 8,
     content: <InfoSkeleton username="Roshan" />,
-    className:  "col-span-1",
+    className:  "col-auto",
     thumbnail: "/photos/roshan.jpeg",
   },
   {
     id: 10,
     content: <InfoSkeleton username="Soumil" />,
-    className: "col-span-1",
+    className: "col-auto",
     thumbnail: "/photos/soumil.jpeg",
   },
   {
     id: 9,
     content: <InfoSkeleton username="Shravani" />,
-    className:  "md:col-span-2",
+    className:  "col-auto",
     thumbnail: "/photos/shravani.jpeg",
   },
   {
     id: 5,
     content: <InfoSkeleton username="Kiran" />,
-    className: "md:col-span-2",
+    className: "col-auto",
     thumbnail: "/photos/kiran.jpeg",
   },
   
   {
     id: 11,
     content: <InfoSkeleton username="Yajat" />,
-    className:  "col-span-1",
+    className:  "col-auto",
     thumbnail: "/photos/yajat.jpeg",
   },
 ];
