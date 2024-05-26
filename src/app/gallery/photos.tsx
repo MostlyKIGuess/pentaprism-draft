@@ -96,15 +96,16 @@ export function Photoslayout() {
     // </div>
     // </div>
     <div className="w-full flex flex-col">
-    <div className="h-screen py-5 flex flex-col items-center justify-center">
+    {/* <div className="h-screen py-5 flex flex-col items-center justify-center">
       <LayoutGrid cards={cards1} />
     </div>
     <div className="h-screen py-5 flex flex-col items-center justify-center">
       <LayoutGrid cards={cards2} />
-    </div>
-    {/* <div className="h-screen py-5 flex flex-col items-center justify-center">
-      <LayoutGrid cards={cards3} />
     </div> */}
+    <div className="h-screen py-5 flex md:flex-col sm:flex-row items-center justify-center">
+    <LayoutGrid cards={initialCards} />
+    </div>
+    
   </div>
  
   
@@ -138,12 +139,7 @@ const initialCards = [
     className:"md:col-span-2",
     thumbnail: "/photos/Brahad.jpeg",
   },
-  {
-    id: 5,
-    content: <InfoSkeleton username="Kiran" />,
-    className: "md:col-span-2",
-    thumbnail: "/photos/kiran.jpeg",
-  },
+
   {
     id: 6,
     content: <InfoSkeleton username="Nidhi" />,
@@ -163,17 +159,24 @@ const initialCards = [
     thumbnail: "/photos/roshan.jpeg",
   },
   {
+    id: 10,
+    content: <InfoSkeleton username="Soumil" />,
+    className: "col-span-1",
+    thumbnail: "/photos/soumil.jpeg",
+  },
+  {
     id: 9,
     content: <InfoSkeleton username="Shravani" />,
     className:  "md:col-span-2",
     thumbnail: "/photos/shravani.jpeg",
   },
   {
-    id: 10,
-    content: <InfoSkeleton username="Soumil" />,
-    className: "col-span-1",
-    thumbnail: "/photos/soumil.jpeg",
+    id: 5,
+    content: <InfoSkeleton username="Kiran" />,
+    className: "md:col-span-2",
+    thumbnail: "/photos/kiran.jpeg",
   },
+  
   {
     id: 11,
     content: <InfoSkeleton username="Yajat" />,

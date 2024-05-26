@@ -31,7 +31,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 
   return (
       
-    <div className="w-full h-full p-1 grid grid-cols-1 md:grid-cols-4 max-w-6xl mx-auto gap-4 relative overflow-auto">
+    <div className="w-full h-full p-1 grid grid-cols-3 md:grid-cols-4  max-w-6xl mx-auto gap-4 relative overflow-auto">
     {cards.map((card, i) => (
       <div key={i} className={cn(card.className, "")}>
         <motion.div
@@ -40,10 +40,10 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
             card.className,
             "relative overflow-hidden flex flex-col md:flex-row",
             selected?.id === card.id
-              ? "rounded-lg cursor-pointer absolute inset-0 h-full w-full md:w-3/4 m-auto z-50 justify-center items-center"
+              ? "rounded-lg cursor-pointer absolute inset-0 h-full w-full sm:max-w-fit sm:max-h-fit md:max-w-none md:max-h-none md:w-3/4  md:w-3/4 m-auto z-50 justify-center items-center"
               : lastSelected?.id === card.id
-              ? "z-40 bg-white rounded-xl h-full w-full"
-              : "bg-white rounded-xl h-full w-full"
+              ? "z-40 bg-transparent rounded-xl h-full w-full"
+              : "bg-transparent rounded-xl h-full w-full"
           )}
           layout
         >
@@ -66,12 +66,39 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 
 const BlurImage = ({ card }: { card: Card }) => {
   const [loaded, setLoaded] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = card.thumbnail;
+    img.onload = () => {
+      let width = img.width;
+      let height = img.height;
+
+   
+      if (width > height) {
+        if (width > 500) {
+          height *= 500 / width;
+          width = 500;
+        }
+      } else {
+        if (height > 500) {
+          width *= 500 / height;
+          height = 500;
+        }
+      }
+
+      setDimensions({ width, height });
+      setLoaded(true);
+    };
+  }, [card.thumbnail]);
+
   return (
     <Image
       src={card.thumbnail}
-      height="500"
-      width="500"
-      onLoad={() => setLoaded(true)}
+      width={dimensions.width}
+      height={dimensions.height}
+      layout="responsive"
       className={cn(
         "object-cover object-top absolute inset-0 h-full w-full transition duration-200",
         loaded ? "blur-none" : "blur-md"
