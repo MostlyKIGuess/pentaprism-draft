@@ -169,4 +169,48 @@ const initialCards = [
     className:  "col-auto",
     thumbnail: "/photos/yajat.jpeg",
   },
+  // images added
+  {
+    id: 12,
+    content: <InfoSkeleton username="Ananya Kasavjhala" />,
+    className:  "col-auto",
+    thumbnail: "/photos/AnanyaK.jpeg",
+  },
+
+  {
+    id: 13,
+    content: <InfoSkeleton username="Ananya Kasavjhala" />,
+    className:  "col-auto",
+    thumbnail: "/photos/AnanyaK2.jpeg",
+  },
+
+  {
+    id: 14,
+    content: <InfoSkeleton username="Krish Pandya" />,
+    className:  "col-auto",
+    thumbnail: "/photos/KP2.jpeg",
+  },
+
+  {
+    id: 15,
+    content: <InfoSkeleton username="Krish Pandya" />,
+    className:  "col-auto",
+    thumbnail: "/photos/KrishP.jpeg",
+  },
+
+  {
+    id: 16,
+    content: <InfoSkeleton username="Nidhi Vaidya" />,
+    className:  "col-auto",
+    thumbnail: "/photos/NidhiV.jpeg",
+  },
+
+  {
+    id: 17,
+    content: <InfoSkeleton username="Shoaib Ahmed" />,
+    className:  "col-auto",
+    thumbnail: "/photos/ShoabA.jpeg",
+  },
+
+
 ];
