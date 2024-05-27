@@ -127,25 +127,25 @@ const initialCards = [
   },
 
   {
-    id: 6,
+    id: 5,
     content: <InfoSkeleton username="Nidhi" />,
     className: "col-auto",
     thumbnail: "/photos/nidhi.jpeg",
   },
   {
-    id: 7,
+    id: 6,
     content: <InfoSkeleton username="Raunak Seksaria" />,
     className:  "col-auto",
     thumbnail: "/photos/raunak seksaria.jpeg",
   },
   {
-    id: 8,
+    id: 7,
     content: <InfoSkeleton username="Roshan" />,
     className:  "col-auto",
     thumbnail: "/photos/roshan.jpeg",
   },
   {
-    id: 10,
+    id: 8,
     content: <InfoSkeleton username="Soumil" />,
     className: "col-auto",
     thumbnail: "/photos/soumil.jpeg",
@@ -157,7 +157,7 @@ const initialCards = [
     thumbnail: "/photos/shravani.jpeg",
   },
   {
-    id: 5,
+    id: 10,
     content: <InfoSkeleton username="Kiran" />,
     className: "col-auto",
     thumbnail: "/photos/kiran.jpeg",
@@ -168,5 +168,46 @@ const initialCards = [
     content: <InfoSkeleton username="Yajat" />,
     className:  "col-auto",
     thumbnail: "/photos/yajat.jpeg",
+  },
+  {
+    id: 12,
+    content: <InfoSkeleton username="Ananya Kasavjhala" />,
+    className:  "col-auto",
+    thumbnail: "/photos/AnanyaK.jpeg",
+  },
+
+  {
+    id: 13,
+    content: <InfoSkeleton username="Ananya Kasavjhala" />,
+    className:  "col-auto",
+    thumbnail: "/photos/AnanyaK2.jpeg",
+  },
+
+  {
+    id: 14,
+    content: <InfoSkeleton username="Krish Pandya" />,
+    className:  "col-auto",
+    thumbnail: "/photos/KP2.jpeg",
+  },
+
+  {
+    id: 15,
+    content: <InfoSkeleton username="Krish Pandya" />,
+    className:  "col-auto",
+    thumbnail: "/photos/KrishP.jpeg",
+  },
+
+  {
+    id: 16,
+    content: <InfoSkeleton username="Nidhi Vaidya" />,
+    className:  "col-auto",
+    thumbnail: "/photos/NidhiV.jpeg",
+  },
+
+  {
+    id: 17,
+    content: <InfoSkeleton username="Shoaib Ahmed" />,
+    className:  "col-auto",
+    thumbnail: "/photos/ShoabA.jpeg",
   },
 ];
