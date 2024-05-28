@@ -98,116 +98,112 @@ export function Photoslayout() {
   );
 }
 
-
 const initialCards = [
-
   {
     id: 1,
     content: <InfoSkeleton username="Akshit" />,
-    className: "col-auto", 
+    className: "col-span-1 md:col-auto ", 
     thumbnail: "/photos/akshit.jpeg",
   },
   {
     id: 2,
     content: <InfoSkeleton username="Arya Topale" />,
-    className:  "col-auto",
+        className: "col-span-1 md:col-auto ", 
     thumbnail: "/photos/Arya Topale.jpeg",
   },
   {
     id: 3,
     content: <InfoSkeleton username="Bhavya" />,
-    className:  "col-auto",
+        className: "col-span-1 md:col-auto ", 
     thumbnail: "/photos/bhavya.jpeg",
   },
   {
     id: 4,
     content: <InfoSkeleton username="Brahad" />,
-    className:"col-auto",
+    className:"col-span-1 md:col-auto",
     thumbnail: "/photos/Brahad.jpeg",
   },
-
   {
     id: 5,
     content: <InfoSkeleton username="Nidhi" />,
-    className: "col-auto",
+    className: "col-span-1 md:col-auto",
     thumbnail: "/photos/nidhi.jpeg",
   },
   {
     id: 6,
     content: <InfoSkeleton username="Raunak Seksaria" />,
-    className:  "col-auto",
+        className: "col-span-1 md:col-auto ", 
     thumbnail: "/photos/raunak seksaria.jpeg",
   },
   {
     id: 7,
     content: <InfoSkeleton username="Roshan" />,
-    className:  "col-auto",
+        className: "col-span-1 md:col-auto ", 
     thumbnail: "/photos/roshan.jpeg",
   },
   {
     id: 8,
     content: <InfoSkeleton username="Soumil" />,
-    className: "col-auto",
+    className: "col-span-1 md:col-auto",
     thumbnail: "/photos/soumil.jpeg",
   },
   {
     id: 9,
     content: <InfoSkeleton username="Shravani" />,
-    className:  "col-auto",
+        className: "col-span-1 md:col-auto ", 
     thumbnail: "/photos/shravani.jpeg",
   },
   {
     id: 10,
     content: <InfoSkeleton username="Kiran" />,
-    className: "col-auto",
+    className: "col-span-1 md:col-auto",
     thumbnail: "/photos/kiran.jpeg",
   },
-  
   {
     id: 11,
     content: <InfoSkeleton username="Yajat" />,
-    className:  "col-auto",
+    className: "col-span-1 md:col-auto",
     thumbnail: "/photos/yajat.jpeg",
   },
   {
     id: 12,
     content: <InfoSkeleton username="Ananya Kasavjhala" />,
-    className:  "col-auto",
+    className: "col-span-1 md:col-auto",
     thumbnail: "/photos/AnanyaK.jpeg",
   },
 
   {
     id: 13,
     content: <InfoSkeleton username="Ananya Kasavjhala" />,
-    className:  "col-auto",
+    className: "col-span-1 md:col-auto",
     thumbnail: "/photos/AnanyaK2.jpeg",
   },
 
   {
     id: 14,
     content: <InfoSkeleton username="Krish Pandya" />,
-    className:  "col-auto",
+    className: "col-span-1 md:col-auto",
     thumbnail: "/photos/KP2.jpeg",
   },
 
   {
     id: 15,
     content: <InfoSkeleton username="Krish Pandya" />,
-    className:  "col-auto",
+    className: "col-span-1 md:col-auto",
     thumbnail: "/photos/KrishP.jpeg",
   },
 
   {
     id: 16,
     content: <InfoSkeleton username="Nidhi Vaidya" />,
-    className:  "col-auto",
+    className: "col-span-1 md:col-auto",
     thumbnail: "/photos/NidhiV.jpeg",
   },
 
   {
     id: 17,
     content: <InfoSkeleton username="Shoaib Ahmed" />,
-    className:  "col-auto",
+    className: "col-span-1 md:col-auto",
     thumbnail: "/photos/ShoabA.jpeg",
   },
 ];

@@ -29,7 +29,7 @@ export function EventsPage() {
           {/* Radial gradient for the cute fade */}
           <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
         </Card>
-        <Card title="Lorem alaslfkf alksnf alksnf laksnf laksnf laknsf alsk fnasl fknaf lkans flask" icon={<h3 className="text-2xl font-bold text-center justify-center">Campus Tours</h3>}>
+        <Card title="We explore the campus, take picture and videos and upload this on youtube for a tour of campus." icon={<h3 className="text-2xl font-bold text-center justify-center">Campus Tours</h3>}>
           <CanvasRevealEffect
             animationSpeed={4}
             containerClassName="bg-sky-600"
