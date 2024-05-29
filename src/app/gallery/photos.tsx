@@ -206,4 +206,44 @@ const initialCards = [
     className: "col-span-1 md:col-auto",
     thumbnail: "/photos/ShoabA.jpeg",
   },
+
+  {
+    id: 18,
+    content: <InfoSkeleton username="Asrith Reddy" />,
+    className:  "col-auto",
+    thumbnail: "/photos/Asrith1_295.jpeg",
+  },
+
+
+  {
+    id: 19,
+    content: <InfoSkeleton username="Mohit Singh" />,
+    className:  "col-auto",
+    thumbnail: "/photos/Mohit1_295.jpeg",
+  },
+
+
+  {
+    id: 20,
+    content: <InfoSkeleton username="Mohit Singh" />,
+    className:  "col-auto",
+    thumbnail: "/photos/Mohit2_295.jpeg",
+  },
+
+
+  {
+    id: 21,
+    content: <InfoSkeleton username="Shravani" />,
+    className:  "col-auto",
+    thumbnail: "/photos/Shravani1_295.jpeg",
+  },
+
+
+  {
+    id: 22,
+    content: <InfoSkeleton username="Soumil" />,
+    className:  "col-auto",
+    thumbnail: "/photos/Soumil1_295.jpeg",
+  },
 ];
+
