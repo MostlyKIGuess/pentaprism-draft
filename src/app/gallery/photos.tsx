@@ -100,6 +100,30 @@ export function Photoslayout() {
 
 const initialCards = [
   {
+    id: 33,
+    content: <InfoSkeleton username="Soumil" />,
+    className: "col-span-1 md:col-auto ", 
+    thumbnail: "/photos/Soumil2_0407.jpeg",
+  },
+  {
+    id: 32,
+    content: <InfoSkeleton username="Soumil" />,
+    className: "col-span-1 md:col-auto ", 
+    thumbnail: "/photos/Soumil1_0407.jpeg",
+  },
+  {
+    id: 31,
+    content: <InfoSkeleton username="Nidhi" />,
+    className: "col-span-1 md:col-auto ", 
+    thumbnail: "/photos/Nidhi1_0407.jpeg",
+  },
+  {
+    id: 30,
+    content: <InfoSkeleton username="Aryan Shrivastava" />,
+    className: "col-span-1 md:col-auto ", 
+    thumbnail: "/photos/AryanS1_0407.jpeg",
+  },
+  {
     id: 29,
     content: <InfoSkeleton username="Soumil" />,
     className: "col-span-1 md:col-auto ", 
